@@ -1,8 +1,11 @@
 import logo from './logo.svg';
+import { login } from './utils/utils';
 import './App.css';
 
-function App() {
-  return (
+const App = () => {
+
+  if ( !window.walletConnection.isSignedIn() ) {
+    return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -17,9 +20,11 @@ function App() {
         >
           Learn React
         </a>
+        <button onClick={login}> Login </button>
       </header>
     </div>
-  );
+    )
+  }
 }
 
 export default App;
