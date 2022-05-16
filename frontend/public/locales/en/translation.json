@@ -1,3 +1,4 @@
 {
-  "LOGIN_BUTTON": "Login"
+  "LOGIN_BUTTON": "Login",
+  "LOGOUT_BUTTON": "Logout"
 }

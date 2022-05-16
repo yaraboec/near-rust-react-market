@@ -1,36 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
 
-import { login } from './utils/utils';
+import { login, logout } from './utils/utils';
 
-import logo from './logo.svg';
 import './App.css';
 
 const App = () => {
   const [ t ] = useTranslation();
 
-  if ( !window.walletConnection.isSignedIn() ) {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-          Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-          Learn React
-          </a>
-          <button onClick={ login }> { t( 'LOGIN_BUTTON' ) } </button>
-        </header>
-      </div>
-    );
-  }
+  const [ number, setNumber ] = useState();
+
+  const isSignedIn = window.walletConnection.isSignedIn();
+
+  useEffect( () => {
+    if ( isSignedIn ) {
+      window.contract.get_num()
+        .then( ( num ) => setNumber( num ) )
+        .catch( console.log );
+    }
+  }, [] );
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        {
+          !isSignedIn
+            ? <button
+              onClick={ login }>
+              { t( 'LOGIN_BUTTON' ) }
+            </button>
+            : <button onClick={ () => logout }> { t( 'LOGOUT_BUTTON' ) } { number } </button>
+        }
+      </header>
+    </div>
+  );
 };
 
 export default App;
