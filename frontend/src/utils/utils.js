@@ -1,4 +1,4 @@
-import { connect, Contract, keyStores, WalletConnection } from 'near-api-js';
+import { Contract, WalletConnection, connect, keyStores } from 'near-api-js';
 import getConfig from '../config/near_config';
 
 const nearConfig = getConfig( process.env.REACT_APP_NODE_ENV || 'development' );
