@@ -1,0 +1,9 @@
+{
+    "name": "nft",
+    "version": "1.0.0",
+    "license": "ISC",
+    "scripts": {
+        "build": "cd contract && bash build.sh && cd ../..",
+        "deploy": "cd contract && bash deploy.sh && cd ../.."
+    }
+}
