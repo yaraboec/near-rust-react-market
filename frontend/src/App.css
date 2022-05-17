@@ -1,11 +1,61 @@
 .App {
-  background: rgb(112,183,198);
-  background: linear-gradient(90deg, rgba(112,183,198,1) 67%, rgba(122,115,255,1) 100%);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  color: white;
-  height: 100%;
-  font-size: calc(10px + 2vmin);
-  min-height: 100vh;
+    background-color: #9a9ab6;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    height: 100%;
+    font-size: calc(10px + 2vmin);
+    min-height: 94vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+table {
+    width: 25%;
+    background-color: #f0f0da;
+    border-radius: 25px;
+    margin-bottom: 100px;
+}
+
+table td {
+    text-align: center;
+    padding: 20px;
+}
+
+article {
+    background: linear-gradient(
+      to right,
+      hsl(98 100% 62%),
+      hsl(204 100% 59%)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h1 {
+    font-size: 5vmin;
+    line-height: 1.1;
+}
+
+h1, p, body {
+    margin: 0;
+}
+
+.main-title {
+    margin-top: 40px;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+    text-align: center;
+}
+
+.btn_home_login {
+    width: 300px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+

@@ -1,36 +1,42 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { loginSlice } from './store/reducers/LoginSlice';
+import { Button } from 'react-bootstrap';
+
 import { login, logout } from './utils/utils';
 
+import logo from '../public/NFT_Icon.png';
 import './App.css';
 
 const App = () => {
-  const dispatch = useDispatch();
   const [ t ] = useTranslation();
-
-  const { isLoggedIn } = useSelector( ( state ) => state.loginReducer );
-  const { changeLoginStatus } = loginSlice.actions;
-
-  useEffect( () => {
-    const isSignedIn = window.walletConnection.isSignedIn();
-
-    dispatch( changeLoginStatus( isSignedIn ) );
-
-    if ( isSignedIn ) {
-      console.log( 1 );
-    }
-  }, [] );
 
   return (
     <div className="App">
-      {
-        !isLoggedIn
-          ? <button onClick={ login }> { t( 'LOGIN_BUTTON' ) } </button>
-          : <button onClick={ logout }> { t( 'LOGOUT_BUTTON' ) } </button>
-      }
+      <table>
+        <tr>
+          <td className="main-title" >
+            <article>
+              <h1>{ t( 'HOME_MAIN_TITLE' ) }</h1>
+            </article>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <img src={logo} alt="logo" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <Button
+              className="btn_home_login"
+              onClick={login}
+            >
+              <h3> { t( 'HOME_LOGIN_BUTTON' ) } </h3>
+            </Button>
+          </td>
+        </tr>
+      </table>
     </div>
   );
 };

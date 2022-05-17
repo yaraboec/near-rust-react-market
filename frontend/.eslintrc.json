@@ -37,7 +37,7 @@
         "space-in-parens": ["error", "always"],
         "sort-imports": ["error", {
             "ignoreCase": false,
-            "ignoreDeclarationSort": false,
+            "ignoreDeclarationSort": true,
             "ignoreMemberSort": false,
             "allowSeparatedGroups": true
         }],
