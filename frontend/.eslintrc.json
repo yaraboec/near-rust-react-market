@@ -23,6 +23,7 @@
         "array-bracket-spacing": ["error", "always"],
         "arrow-spacing": "error",
         "comma-dangle": ["error", "always-multiline"],
+        "eol-last":"off",
         "indent": ["error", 2, { "SwitchCase": 1 }],
         "key-spacing": ["error", { "beforeColon": true }],
         "max-len": ["error", { "code": 99 }],
