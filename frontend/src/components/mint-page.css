@@ -1,0 +1,46 @@
+.btn-mint {
+    width: 75%;
+    margin-bottom: 30px;
+}
+
+.form-label {
+    font-weight: 700;
+    font-size: large;
+}
+
+label {
+    background: linear-gradient(
+      to right,
+      rgb(41, 112, 0),
+      rgb(0, 114, 190)
+    );
+    background-clip: text;
+    color: transparent;
+}
+
+tr h1{
+    padding: 20px 20px 0px 20px;
+    text-align: center;
+}
+
+.nft-create-table {
+    margin-bottom: 0;
+}
+
+.nft-create-table td {
+    padding: 10px 20px 20px 20px;
+}
+
+.table-button-tr {
+    text-align: center;
+}
+
+input {
+    width: 5%;
+}
+
+.nft-create-table label {
+    margin-left: 10px;
+    float:left
+}
+

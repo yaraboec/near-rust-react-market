@@ -16,10 +16,6 @@ const RoutingPage = () => {
     const isSignedIn = window.walletConnection.isSignedIn();
 
     dispatch( changeLoginStatus( isSignedIn ) );
-
-    if ( isSignedIn ) {
-      console.log( 1 );
-    }
   }, [] );
 
   return (

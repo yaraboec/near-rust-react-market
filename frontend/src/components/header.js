@@ -16,14 +16,8 @@ const Header = () => {
     <div className="header">
       {
         !isLoggedIn
-          ? <Button
-            className="btn-login"
-            onClick={ login }>
-            { t( 'LOGIN_BUTTON' ) }
-          </Button>
-          : <div>
-            <Button className="btn-logout" onClick={ logout }> { t( 'LOGOUT_BUTTON' ) } </Button>
-          </div>
+          ? <Button className="btn-login" onClick={ login }> { t( 'LOGIN_BUTTON' ) } </Button>
+          : <Button className="btn-logout" onClick={ logout }> { t( 'LOGOUT_BUTTON' ) } </Button>
       }
     </div>
   );

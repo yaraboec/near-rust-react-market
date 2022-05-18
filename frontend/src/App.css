@@ -1,5 +1,5 @@
 .App {
-    background-color: #9a9ab6;
+    background-color: #b0b0bd;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -30,8 +30,8 @@ article {
       hsl(98 100% 62%),
       hsl(204 100% 59%)
     );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 
 h1 {

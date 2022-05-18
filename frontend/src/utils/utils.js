@@ -11,11 +11,10 @@ const initContract = async () => {
 
   window.walletConnection = new WalletConnection( near );
   window.accountId = window.walletConnection.getAccountId();
-  console.log( window.walletConnection.account() );
   window.contract = await new Contract(
     window.walletConnection.account(),
     window.accountId,
-    { viewMethods : [ 'get_num' ], changeMethods : [ 'increment' ] },
+    { viewMethods : [ 'nft_token' ], changeMethods : [ 'nft_mint' ] },
   );
 };
 

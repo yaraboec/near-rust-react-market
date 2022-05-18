@@ -1,25 +1,27 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import App from '../App';
+import MintPage from '../components/mint-page';
 
 const Router = () => {
-  console.log( 1 );
   const { isLoggedIn } = useSelector( ( state ) => state.loginReducer );
-
-  if ( isLoggedIn ) {
-  /*  return (
-      <Switch>
-        <Route path="/" exact component={App} />
-        <Redirect to="/" />
-      </Switch>
-    ); */
-  }
 
   return (
     <Routes>
-      <Route path="" element={ <App/> } />
+      {
+        isLoggedIn
+          ? <>
+            <Route path="/minting" element={ <MintPage/> } />
+            <Route path="/" element={ <Navigate to="/minting" /> }/>
+          </>
+          : <>
+            <Route path="/" element={ <App/> } />
+            <Route path="" element={ <Navigate to="/" /> }/>
+            <Route path="/minting" element={ <Navigate to="/" /> }/>
+          </>
+      }
     </Routes>
   );
 };

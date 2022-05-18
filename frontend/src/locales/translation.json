@@ -1,6 +1,12 @@
 {
+    "BTN_CREATE_NFT": "Create NFT",
+    "HOME_MAIN_TITLE": "Discover, collect, and sell extraordinary NFTs",
+    "HOME_LOGIN_BUTTON": "Get started!",
     "LOGIN_BUTTON": "Login",
     "LOGOUT_BUTTON": "Logout",
-    "HOME_MAIN_TITLE": "Discover, collect, and sell extraordinary NFTs",
-    "HOME_LOGIN_BUTTON": "Get started!"
+    "NFT_CREATE_LABEL": "Lets create your own NFT!",
+    "BUTTON_LABEL_TOKEN_ID" : "Unique identifier",
+    "BUTTON_LABEL_LABEL": "Title",
+    "BUTTON_LABEL_DESCRIPTION": "Description",
+    "BUTTON_LABEL_MEDIA": "Link to media"
 }
