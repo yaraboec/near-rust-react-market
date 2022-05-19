@@ -1,10 +1,12 @@
 {
     "BTN_CREATE_NFT": "Create NFT",
+    "BTN_CREATE_FIRST_NFT": "Create first NFT!",
     "BTN_LABEL_TOKEN_ID" : "Unique identifier",
     "BTN_LABEL_LABEL": "Title",
     "BTN_LABEL_DESCRIPTION": "Description",
     "BTN_LABEL_MEDIA": "Link to media",
     "BTN_MY_NFT": "My NFTs",
+    "CREATE_NFT_LABEL": "You dont have any NFTs... So let's create them!",
     "GREETINGS": "Hello, {{accountId}}",
     "HOME_MAIN_TITLE": "Discover, collect, and sell extraordinary NFTs",
     "HOME_LOGIN_BUTTON": "Get started!",

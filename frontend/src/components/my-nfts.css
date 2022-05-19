@@ -1,5 +1,6 @@
 .table-nft-view{
     width: 500px;
+    max-height: 400px;
 }
 
 .nft-view {
@@ -47,4 +48,33 @@
 
 .table-nft-view article {
     max-height: 100px;
+}
+
+.empty-list {
+    margin-right: auto;
+    min-width: 1200px;
+    margin-left: 500px;
+    margin-top: 20vh;
+}
+
+.empty-list h1 {
+    font-size: 3rem;
+}
+
+.empty-list article {
+    background: linear-gradient(
+      to right,
+      rgb(74, 201, 0),
+      rgb(33, 162, 248)
+    );
+    background-clip: text;
+    color: transparent;
+}
+
+.empty-list .btn-create-nft {
+    font-size: xx-large;
+    margin-top: 50px;
+    margin-left: 350px;
+    width: 300px;
+    height: 70px;
 }
