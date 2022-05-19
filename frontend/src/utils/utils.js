@@ -14,7 +14,7 @@ const initContract = async () => {
   window.contract = await new Contract(
     window.walletConnection.account(),
     window.accountId,
-    { viewMethods : [ 'nft_token' ], changeMethods : [ 'nft_mint' ] },
+    { viewMethods : [ 'nft_token', 'nft_tokens_for_owner' ], changeMethods : [ 'nft_mint' ] },
   );
 };
 

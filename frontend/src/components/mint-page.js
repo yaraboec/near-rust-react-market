@@ -44,7 +44,7 @@ const MintPage = () => {
           </tr>
           <tr>
             <td className="main-title" >
-              <Form.Label htmlFor="basic-url">{ t( 'BUTTON_LABEL_TOKEN_ID' ) }</Form.Label>
+              <Form.Label htmlFor="basic-url">{ t( 'BTN_LABEL_TOKEN_ID' ) }</Form.Label>
               <InputGroup className="mb-3">
                 <FormControl
                   name="token_id"
@@ -52,7 +52,7 @@ const MintPage = () => {
                   onChange={ handleChange }
                 />
               </InputGroup>
-              <Form.Label htmlFor="basic-url">{ t( 'BUTTON_LABEL_LABEL' ) }</Form.Label>
+              <Form.Label htmlFor="basic-url">{ t( 'BTN_LABEL_LABEL' ) }</Form.Label>
               <InputGroup className="mb-3">
                 <FormControl
                   name="title"
@@ -60,7 +60,7 @@ const MintPage = () => {
                   onChange={ handleChange }
                 />
               </InputGroup>
-              <Form.Label htmlFor="basic-url">{ t( 'BUTTON_LABEL_DESCRIPTION' ) }</Form.Label>
+              <Form.Label htmlFor="basic-url">{ t( 'BTN_LABEL_DESCRIPTION' ) }</Form.Label>
               <InputGroup className="mb-3">
                 <FormControl
                   name="description"
@@ -68,13 +68,15 @@ const MintPage = () => {
                   onChange={ handleChange }
                 />
               </InputGroup>
-              <Form.Label htmlFor="basic-url">{ t( 'BUTTON_LABEL_MEDIA' ) }</Form.Label>
+              <Form.Label htmlFor="basic-url">{ t( 'BTN_LABEL_MEDIA' ) }</Form.Label>
               <InputGroup className="mb-3">
                 <FormControl
                   name="media"
                   placeholder="Input link..."
                   onChange={ handleChange }
+                  aria-describedby="basic-addon2"
                 />
+                <InputGroup.Text id="basic-addon2">{ t( 'MEDIA_FORMATS' ) }</InputGroup.Text>
               </InputGroup>
             </td>
           </tr>

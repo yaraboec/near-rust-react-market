@@ -22,6 +22,10 @@ const mintNFT = async ( nftData ) => {
   }
 };
 
+const getAllUserNFTs = async () =>
+  window.contract.nft_tokens_for_owner( { account_id : window.accountId } );
+
 export {
+  getAllUserNFTs,
   mintNFT,
 };

@@ -42,6 +42,7 @@
             "ignoreMemberSort": false,
             "allowSeparatedGroups": true
         }],
+        "react/jsx-key":"off",
         "react/jsx-equals-spacing": ["error", "never"],
         "react/jsx-curly-spacing": [2, { "when": "always", "children": true }]
     }
