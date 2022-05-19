@@ -34,10 +34,10 @@ const MyNFTs = () => {
   return ( <div className="nft-view"> { R.map( ( [ key, value ] ) =>
     <table className="table-nft-view" key={ key }>
       <article>
-        <h1> { value.title } </h1>
+        <h1> { R.prop( 'title', value ) } </h1>
       </article>
-      <img src={ value.media } alt="media" />
-      <label> { value.description } </label>
+      <img src={ R.prop( 'media', value ) } alt="media" />
+      <label> { R.prop( 'description', value ) } </label>
     </table>,
   R.toPairs( getNFTMetadata( userNFTs ) ) ) } </div> );
 };
