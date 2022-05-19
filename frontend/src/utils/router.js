@@ -16,7 +16,7 @@ const Router = () => {
           ? <>
             <Route path="/my-nfts" element={ <MyNFTs/> } />
             <Route path="/minting" element={ <MintPage/> } />
-            <Route path="/" element={ <Navigate to="/minting" /> }/>
+            <Route path="/" element={ <Navigate to="/my-nfts" /> }/>
           </>
           : <>
             <Route path="/" element={ <App/> } />

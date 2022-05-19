@@ -1,0 +1,48 @@
+.table-nft-view{
+    width: 500px;
+}
+
+.nft-view {
+    background-color: #b0b0bd;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    height: 100%;
+    font-size: calc(10px + 2vmin);
+    min-height: 94vh;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+}
+
+.table-nft-view h1 {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.table-nft-view img,
+.table-nft-view label {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 15px;
+}
+
+.table-nft-view img {
+    border-radius: 25px;
+    margin: 1em auto 1em;
+}
+
+.table-nft-view label{
+    text-align: center;
+}
+
+.nft-view .table-nft-view:nth-child(-n+3) {
+    margin-top: 100px;
+}
+
+.table-nft-view article {
+    max-height: 100px;
+}
