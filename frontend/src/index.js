@@ -5,10 +5,11 @@ import { Provider } from 'react-redux';
 import { setupStore } from './store/store';
 import { initContract } from './utils/utils';
 
-import App from './App';
+import RoutingPage from './components/routing-page';
 
 import './utils/i18n';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const store = setupStore();
 
@@ -17,10 +18,8 @@ window.nearInitPromise = initContract()
     const root = ReactDOM.createRoot( document.getElementById( 'root' ) );
 
     root.render(
-      <React.StrictMode>
-        <Provider store={store}>
-          <App />
-        </Provider>
-      </React.StrictMode>,
+      <Provider store={ store }>
+        <RoutingPage />
+      </Provider>,
     );
   } ).catch( console.error );

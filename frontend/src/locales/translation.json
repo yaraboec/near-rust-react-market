@@ -1,0 +1,15 @@
+{
+    "BTN_CREATE_NFT": "Create NFT",
+    "BTN_LABEL_TOKEN_ID" : "Unique identifier",
+    "BTN_LABEL_LABEL": "Title",
+    "BTN_LABEL_DESCRIPTION": "Description",
+    "BTN_LABEL_MEDIA": "Link to media",
+    "BTN_MY_NFT": "My NFTs",
+    "GREETINGS": "Hello, {{accountId}}",
+    "HOME_MAIN_TITLE": "Discover, collect, and sell extraordinary NFTs",
+    "HOME_LOGIN_BUTTON": "Get started!",
+    "LOGIN_BUTTON": "Login",
+    "LOGOUT_BUTTON": "Logout",
+    "MEDIA_FORMATS": "jpeg, jpg, gif, png",
+    "NFT_CREATE_LABEL": "Lets create your own NFT!"
+}
