@@ -1,5 +1,8 @@
 import * as R from 'ramda';
 import React, { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 
 import { getAllUserNFTs } from '../utils/nft-tools';
 
@@ -12,6 +15,7 @@ const metadataField = [
 ];
 
 const MyNFTs = () => {
+  const [ t ] = useTranslation();
   const [ userNFTs, setUserNFTs ] = useState( {} );
 
   useEffect( () => {
@@ -31,7 +35,7 @@ const MyNFTs = () => {
     };
   }, {} )( R.values( userNFTs ) );
 
-  return ( <div className="nft-view"> { R.map( ( [ key, value ] ) =>
+  return ( <div className="nft-view"> { !R.isEmpty( userNFTs ) ? R.map( ( [ key, value ] ) =>
     <table className="table-nft-view" key={ key }>
       <article>
         <h1> { R.prop( 'title', value ) } </h1>
@@ -39,7 +43,17 @@ const MyNFTs = () => {
       <img src={ R.prop( 'media', value ) } alt="media" />
       <label> { R.prop( 'description', value ) } </label>
     </table>,
-  R.toPairs( getNFTMetadata( userNFTs ) ) ) } </div> );
+  R.toPairs( getNFTMetadata( userNFTs ) ) ) :
+    <div className="empty-list">
+      <article>
+        <h1>{ t( 'CREATE_NFT_LABEL' ) } </h1>
+      </article>
+      <Link to="/minting" >
+        <Button className="btn-create-nft">
+          { t( 'BTN_CREATE_FIRST_NFT' ) }
+        </Button>
+      </Link>
+    </div> } </div> );
 };
 
 export default MyNFTs;

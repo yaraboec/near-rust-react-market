@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "license": "ISC",
     "scripts": {
-        "build": "cd contract && bash build.sh && cd ../..",
-        "deploy": "cd contract && bash deploy.sh && cd ../.."
+        "build": "cd contract && bash build.sh && cd .. && ls && cd market-contract && bash build.sh && cd ..",
+        "deploy": "cd contract && bash deploy.sh && cd .. && ls && cd market-contract && bash deploy.sh && cd .. "
     }
 }
