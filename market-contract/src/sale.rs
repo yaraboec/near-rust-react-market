@@ -124,7 +124,7 @@ impl Contract {
             */
             price,
 			10, //the maximum amount of accounts the market can payout at once (this is limited by GAS)
-            &nft_contract_id, //contract to initiate the cross contract call to
+            nft_contract_id, //contract to initiate the cross contract call to
             1, //yoctoNEAR to attach to the call
             GAS_FOR_NFT_TRANSFER, //GAS to attach to the call
         )
@@ -133,7 +133,7 @@ impl Contract {
         .then(ext_self::resolve_purchase(
             buyer_id, //the buyer and price are passed in incase something goes wrong and we need to refund the buyer
             price,
-            &env::current_account_id(), //we are invoking this function on the current contract
+            env::current_account_id(), //we are invoking this function on the current contract
             NO_DEPOSIT, //don't attach any deposit
             GAS_FOR_ROYALTIES, //GAS attached to the call to payout royalties
         ))
@@ -160,7 +160,7 @@ impl Contract {
                 .and_then(|payout_object| {
                     //we'll check if length of the payout object is > 10 or it's empty. In either case, we return None
                     if payout_object.payout.len() > 10 || payout_object.payout.is_empty() {
-                        env::log("Cannot have more than 10 royalties".as_bytes());
+                        env::log_str("Cannot have more than 10 royalties");
                         None
 
                     //if the payout object is the correct length, we move forward

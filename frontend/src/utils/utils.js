@@ -11,12 +11,21 @@ const initContract = async () => {
 
   window.walletConnection = new WalletConnection( near );
   window.accountId = window.walletConnection.getAccountId();
-  window.contract = await new Contract(
+  window.nft_contract = await new Contract(
     window.walletConnection.account(),
-    nearConfig.contractName,
+    process.env.REACT_APP_NFT_CONTRACT_NAME,
     {
       viewMethods : [ 'nft_token', 'nft_tokens_for_owner' ],
       changeMethods : [ 'nft_mint' ],
+      sender : window.walletConnection.getAccountId(),
+    },
+  );
+  window.market_contract = await new Contract(
+    window.walletConnection.account(),
+    process.env.REACT_APP_MARKETPLACE_CONTRACT_NAME,
+    {
+      viewMethods : [ 'get_supply_sales', 'nft_approve' ],
+      changeMethods : [],
       sender : window.walletConnection.getAccountId(),
     },
   );

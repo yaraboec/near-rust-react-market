@@ -1,7 +1,7 @@
 use crate::*;
 use near_sdk::{ext_contract, Gas};
 
-const GAS_FOR_NFT_APPROVE: Gas = 10_000_000_000_000 as Gas;
+const GAS_FOR_NFT_APPROVE: Gas = Gas(10_000_000_000_000);
 const NO_DEPOSIT: Balance = 0;
 
 pub trait NonFungibleTokenCore {
@@ -92,7 +92,7 @@ impl NonFungibleTokenCore for Contract {
                 token.owner_id,
                 approval_id,
                 msg,
-                &account_id, //contract account we're calling
+                account_id, //contract account we're calling
                 NO_DEPOSIT, //NEAR deposit we attach to the call
                 env::prepaid_gas() - GAS_FOR_NFT_APPROVE, //GAS we're attaching
             )

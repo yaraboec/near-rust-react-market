@@ -20,8 +20,8 @@ mod sale;
 mod sale_views;
 
 //GAS constants to attach to calls
-const GAS_FOR_ROYALTIES: Gas = 115_000_000_000_000 as Gas;
-const GAS_FOR_NFT_TRANSFER: Gas = 15_000_000_000_000 as Gas;
+const GAS_FOR_ROYALTIES: Gas = Gas(115_000_000_000_000);
+const GAS_FOR_NFT_TRANSFER: Gas = Gas(15_000_000_000_000);
 
 //constant used to attach 0 NEAR to a call
 const NO_DEPOSIT: Balance = 0;
