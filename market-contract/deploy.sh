@@ -1,0 +1,1 @@
+near deploy --wasmFile ../out/market.wasm --accountId $NFT_CONTRACT_ID
