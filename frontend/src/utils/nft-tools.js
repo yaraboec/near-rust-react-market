@@ -15,15 +15,15 @@ const formatNFTData = ( nftData ) => {
 const mintNFT = async ( nftData ) => {
   const formattedNFTData = formatNFTData( nftData );
   const isExists =
-    await window.contract.nft_token( { token_id : R.prop( 'token_id', formattedNFTData ) } );
+    await window.nft_contract.nft_token( { token_id : R.prop( 'token_id', formattedNFTData ) } );
 
   if ( !isExists ) {
-    await window.contract.nft_mint( formattedNFTData, ATTACHED_OPTIONAL_GAS, ATTACHED_GAS );
+    await window.nft_contract.nft_mint( formattedNFTData, ATTACHED_OPTIONAL_GAS, ATTACHED_GAS );
   }
 };
 
 const getAllUserNFTs = async () =>
-  window.contract.nft_tokens_for_owner( { account_id : window.accountId } );
+  window.nft_contract.nft_tokens_for_owner( { account_id : window.accountId } );
 
 export {
   getAllUserNFTs,

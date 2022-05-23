@@ -1,9 +1,9 @@
 use crate::*;
 use near_sdk::{ext_contract, Gas, PromiseResult};
 
-const GAS_FOR_RESOLVE_TRANSFER: Gas = 10_000_000_000_000 as Gas;
-const GAS_FOR_NFT_TRANSFER_CALL: Gas = (25_000_000_000_000 + GAS_FOR_RESOLVE_TRANSFER) as Gas;
-const MIN_GAS_FOR_NFT_TRANSFER_CALL: Gas = 100_000_000_000_000 as Gas;
+const GAS_FOR_RESOLVE_TRANSFER: Gas = Gas(10_000_000_000_000);
+const GAS_FOR_NFT_TRANSFER_CALL: Gas = Gas(25_000_000_000_000 + GAS_FOR_RESOLVE_TRANSFER.0);
+const MIN_GAS_FOR_NFT_TRANSFER_CALL: Gas = Gas(100_000_000_000_000);
 const NO_DEPOSIT: Balance = 0;
 
 pub trait NonFungibleTokenCore {
@@ -175,7 +175,7 @@ impl NonFungibleTokenCore for Contract {
             previous_token.owner_id.clone(),
             token_id.clone(),
             msg,
-            &receiver_id.clone(), //contract account to make the call to
+            receiver_id.clone(), //contract account to make the call to
             NO_DEPOSIT, //attached deposit
             env::prepaid_gas() - GAS_FOR_NFT_TRANSFER_CALL, //attached GAS
         )
@@ -187,7 +187,7 @@ impl NonFungibleTokenCore for Contract {
             token_id,
             previous_token.approved_account_ids,
             memo, // we introduce a memo for logging in the events standard
-            &env::current_account_id(), //contract account to make the call to
+            env::current_account_id(), //contract account to make the call to
             NO_DEPOSIT, //attached deposit
             GAS_FOR_RESOLVE_TRANSFER, //GAS attached to the call
         )).into()
@@ -306,7 +306,7 @@ impl NonFungibleTokenResolver for Contract {
         };
 
         //we perform the actual logging
-        env::log(&nft_transfer_log.to_string().as_bytes());
+        env::log_str(&nft_transfer_log.to_string());
 
         //return false
         false

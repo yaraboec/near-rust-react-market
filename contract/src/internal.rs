@@ -154,7 +154,7 @@ impl Contract {
 		if sender_id != &token.owner_id {
 			//if the token's approved account IDs doesn't contain the sender, we panic
 			if !token.approved_account_ids.contains_key(sender_id) {
-				env::panic("Unauthorized".as_bytes());
+				env::panic_str("Unauthorized");
 			}
 
 			// If they included an approval_id, check if the sender's actual approval_id is the same as the one included
@@ -198,9 +198,9 @@ impl Contract {
         //insert that new token into the tokens_by_id, replacing the old entry
         self.tokens_by_id.insert(token_id, &new_token);
 
-         //if there was some memo attached, we log it.
-         if let Some(memo) = memo.as_ref() {
-            env::log(&format!("Memo: {}", memo).to_string().as_bytes());
+        //if there was some memo attached, we log it.
+        if let Some(memo) = memo.as_ref() {
+            env::log_str(&format!("Memo: {}", memo).to_string());
         }
 
         // Default the authorized ID to be None for the logs.
@@ -232,7 +232,7 @@ impl Contract {
         };
 
         // Log the serialized json.
-        env::log(&nft_transfer_log.to_string().as_bytes());
+        env::log_str(&nft_transfer_log.to_string());
 
         //return the preivous token object that was transferred.
         token
